@@ -1,20 +1,12 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useParams,
-} from "react-router-dom";
 import "./App.css";
 
-function Payment() {
+export default function Payment() {
   const [show, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
   const [ErrorMessage, setErrorMessage] = useState("");
   const [orderID, setOrderID] = useState(false);
-
-  const { id } = useParams();
 
   // creates a paypal order
   const createOrder = (data, actions) => {
@@ -22,7 +14,7 @@ function Payment() {
       .create({
         purchase_units: [
           {
-            description: "BKS payment",
+            description: "Sunflower",
             amount: {
               currency_code: "EUR",
               value: 500,
@@ -66,25 +58,25 @@ function Payment() {
       }}
     >
       <div>
-        <p>
-          <span>${id}</span>
-        </p>
+        <div className="wrapper">
+          <div className="product-info">
+            <p>
+              <span>$20</span>
+            </p>
+            <button type="submit" onClick={() => setShow(true)}>
+              Buy now
+            </button>
+          </div>
+        </div>
 
-        <PayPalButtons
-          style={{ layout: "vertical" }}
-          createOrder={createOrder}
-          onApprove={onApprove}
-        />
+        {show ? (
+          <PayPalButtons
+            style={{ layout: "vertical" }}
+            createOrder={createOrder}
+            onApprove={onApprove}
+          />
+        ) : null}
       </div>
     </PayPalScriptProvider>
-  );
-}
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path=":id" element={<Payment />} />
-      </Routes>
-    </Router>
   );
 }
