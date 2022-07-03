@@ -82,7 +82,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path=":id" element={<Payment />} />
+        <Route path="/:id" element={<Payment />} />
       </Routes>
     </Router>
   );
