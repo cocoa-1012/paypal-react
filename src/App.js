@@ -9,7 +9,6 @@ import {
 import "./App.css";
 
 function Payment() {
-  const [show, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
   const [ErrorMessage, setErrorMessage] = useState("");
   const [orderID, setOrderID] = useState(false);
