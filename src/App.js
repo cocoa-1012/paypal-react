@@ -24,7 +24,7 @@ function Payment() {
             description: "BKS payment",
             amount: {
               currency_code: "EUR",
-              value: 500,
+              value: id,
             },
           },
         ],
