@@ -64,11 +64,7 @@ function Payment() {
         currency: "EUR",
       }}
     >
-      <div>
-        <p>
-          <span>${id}</span>
-        </p>
-
+      <div style={{ padding: 20 }}>
         <PayPalButtons
           style={{ layout: "vertical" }}
           createOrder={createOrder}
