@@ -66,7 +66,7 @@ function Payment() {
       <PayPalScriptProvider
         options={{
           "client-id":
-            "AfLn-R4CGa94kI88nfSqiIGMGSVksgSec69HBzLBsoYGJoh4PnxeBVvKOb0uqaGb6S4HLGCx-DxBRAwe",
+            "AffFVjpeVWCzGzYRB3hs1btcwdt1R0adzgVROBak5Fn0hClbBVFea-DznT-WXjcH1h1qjrkqKvPQ6ia-",
           currency: "EUR",
         }}
       >
