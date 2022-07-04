@@ -57,21 +57,34 @@ function Payment() {
     }
   }, [success]);
   return (
-    <PayPalScriptProvider
-      options={{
-        "client-id":
-          "AfLn-R4CGa94kI88nfSqiIGMGSVksgSec69HBzLBsoYGJoh4PnxeBVvKOb0uqaGb6S4HLGCx-DxBRAwe",
-        currency: "EUR",
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
       }}
     >
-      <div style={{ padding: 20 }}>
-        <PayPalButtons
-          style={{ layout: "vertical" }}
-          createOrder={createOrder}
-          onApprove={onApprove}
-        />
-      </div>
-    </PayPalScriptProvider>
+      <PayPalScriptProvider
+        options={{
+          "client-id":
+            "AfLn-R4CGa94kI88nfSqiIGMGSVksgSec69HBzLBsoYGJoh4PnxeBVvKOb0uqaGb6S4HLGCx-DxBRAwe",
+          currency: "EUR",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            margin: "auto",
+            padding: "0px 20px",
+          }}
+        >
+          <PayPalButtons
+            style={{ layout: "vertical" }}
+            createOrder={createOrder}
+            onApprove={onApprove}
+          />
+        </div>
+      </PayPalScriptProvider>
+    </div>
   );
 }
 export default function App() {
